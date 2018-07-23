@@ -1,0 +1,46 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.3.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+//necessary for NetBeans
+apply plugin: 'application'
+mainClassName = 'local.example.draft.DraftApplication'
+
+group = 'local.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+        compile('org.apache.commons:commons-collections4:4.1')
+        compile('org.tensorflow:tensorflow:1.9.0-rc2')
+        compile('com.quantego:clp-java:1.16.10')
+        compile('io.springfox:springfox-swagger2:2.9.2')
+        compile('io.springfox:springfox-swagger-ui:2.9.2')
+        compile('org.springframework.boot:spring-boot-starter-actuator')
+        compile('org.springframework.boot:spring-boot-starter-data-rest')
+        compile('org.springframework.boot:spring-boot-starter-data-jpa')
+        compile('org.springframework.boot:spring-boot-starter-validation')
+        compile('org.hibernate.validator:hibernate-validator')
+        compile('org.springframework.boot:spring-boot-starter-web')
+        runtime('org.springframework.boot:spring-boot-devtools')
+        runtime('com.h2database:h2')
+        testCompile('org.springframework.boot:spring-boot-starter-test')
+  }
