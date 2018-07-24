@@ -34,7 +34,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class StackTests {
     
-    private String[] strings = {
+    private final String[] strings = {
         "first", 
         "second", 
         "third", 
