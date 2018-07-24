@@ -18,26 +18,18 @@
 
 package local.example.draft.adt.perspective.node;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 /**
  *
  * @author paolo mococci
- * @param <Line>
  */
 
-public class Knot<Line> 
-        implements Iterable<Line>{
+public class Knot {
     
     private final long id;
     private final double capacity;
-    private final List<Line> lines;
 
     public Knot(long id, double capacity) {
         super();
-        this.lines = new ArrayList<>();
         this.id = id;
         this.capacity = capacity;
     }
@@ -48,14 +40,5 @@ public class Knot<Line>
 
     public double getCapacity() {
         return capacity;
-    }
-
-    public List<Line> getLines() {
-        return lines;
-    }
-
-    @Override
-    public Iterator<Line> iterator() {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 }
