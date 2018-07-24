@@ -18,19 +18,16 @@
 
 package local.example.draft.adt.perspective.node;
 
-import java.util.Iterator;
 
 /**
  *
  * @author paolo mococci
- * @param <Knot>
  * 
  * Implement node perspective.
  * Groups: Net, Knot and Line
  */
 
-public class Net<Knot> 
-        implements Iterable<Knot> {
+public class Net {
     
     private final long id;
 
@@ -38,8 +35,7 @@ public class Net<Knot>
         this.id = id;
     }
 
-    @Override
-    public Iterator<Knot> iterator() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public long getId() {
+        return id;
     }
 }
