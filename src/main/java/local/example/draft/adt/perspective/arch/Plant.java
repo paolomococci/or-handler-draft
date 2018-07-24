@@ -33,4 +33,21 @@ public class Plant {
     
     private long id;
     private final List<Pipe> pipes = new ArrayList<>();
+
+    public Plant() {
+        super();
+    }
+
+    public Plant(long id) {
+        super();
+        this.id = id;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 }
