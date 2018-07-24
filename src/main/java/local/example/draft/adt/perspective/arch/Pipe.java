@@ -30,4 +30,66 @@ public class Pipe {
     private double flow;
     private Junction previous;
     private Junction following;
+
+    public Pipe() {
+        super();
+    }
+
+    public Pipe(long id, double capacity, Junction previous, Junction following) {
+        super();
+        this.id = id;
+        this.capacity = capacity;
+        this.flow = 0.0D;
+        this.previous = previous;
+        this.following = following;
+    }
+
+    public Pipe(long id, double capacity, double flow, Junction previous, Junction following) {
+        super();
+        this.id = id;
+        this.capacity = capacity;
+        this.flow = flow;
+        this.previous = previous;
+        this.following = following;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public double getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(double capacity) {
+        this.capacity = capacity;
+    }
+
+    public double getFlow() {
+        return flow;
+    }
+
+    public void setFlow(double flow) {
+        this.flow = flow;
+    }
+
+    public Junction getPrevious() {
+        return previous;
+    }
+
+    public void setPrevious(Junction previous) {
+        this.previous = previous;
+    }
+
+    public Junction getFollowing() {
+        return following;
+    }
+
+    public void setFollowing(Junction following) {
+        this.following = following;
+    }
 }
