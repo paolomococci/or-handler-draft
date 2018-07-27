@@ -28,19 +28,19 @@ import local.example.draft.or.algorithm.FlowPipe;
 public class FlowPipeImpl 
         implements FlowPipe {
     
-    private final long previous;
-    private final long following;
+    private final int previous;
+    private final int following;
     private final double capacity;
     private double flow;
 
-    public FlowPipeImpl(long previous, long following, double capacity) {
+    public FlowPipeImpl(int previous, int following, double capacity) {
         this.previous = this.checkPrevious(previous);
         this.following = this.checkFollowing(following);
         this.capacity = this.checkCapacity(capacity);
-        this.flow =0.0;
+        this.flow = 0.0;
     }
 
-    public FlowPipeImpl(long previous, long following, double capacity, double flow) {
+    public FlowPipeImpl(int previous, int following, double capacity, double flow) {
         this.previous = this.checkPrevious(previous);
         this.following = this.checkFollowing(following);
         this.capacity = this.checkCapacity(capacity);
@@ -55,14 +55,14 @@ public class FlowPipeImpl
         this.flow = pipe.flow;
     }
 
-    private long checkPrevious(long previous) {
-        if (0b0L >= previous) {
+    private int checkPrevious(int previous) {
+        if (0b0 >= previous) {
             throw new IllegalArgumentException("invalid index for previous junction");
         }
         return previous;
     }
 
-    private long checkFollowing(long following) {
+    private int checkFollowing(int following) {
         if (0b0L >= following || following == this.previous) {
             throw new IllegalArgumentException("invalid index for following junction");
         }
@@ -84,12 +84,12 @@ public class FlowPipeImpl
     }
 
     @Override
-    public long getPrevious() {
+    public int getPrevious() {
         return this.previous;
     }
 
     @Override
-    public long getFollowing() {
+    public int getFollowing() {
         return this.following;
     }
 
@@ -104,7 +104,7 @@ public class FlowPipeImpl
     }
 
     @Override
-    public long getOther(long junction) {
+    public int getOther(int junction) {
         if (junction == this.previous) {
             return this.following;
         } else if (junction == this.following) {
@@ -115,7 +115,7 @@ public class FlowPipeImpl
     }
 
     @Override
-    public double getResidualCapacity(long junction) {
+    public double getResidualCapacity(int junction) {
         if (junction == this.previous) {
             return this.flow;
         } else if (junction == this.following) {
@@ -126,7 +126,7 @@ public class FlowPipeImpl
     }
 
     @Override
-    public void addResidualFlow(long junction, double delta) {
+    public void addResidualFlow(int junction, double delta) {
         if (0.0D > delta) {
             throw new IllegalArgumentException("delta must non be negative");
         }
