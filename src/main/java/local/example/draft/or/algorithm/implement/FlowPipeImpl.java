@@ -63,7 +63,7 @@ public class FlowPipeImpl
     }
 
     private int checkFollowing(int following) {
-        if (0b0L >= following || following == this.previous) {
+        if (0b0 >= following || following == this.previous) {
             throw new IllegalArgumentException("invalid index for following junction");
         }
         return following;
