@@ -25,12 +25,12 @@ package local.example.draft.or.algorithm;
 
 public interface FlowPipe {
     public static final double EPSILON = 1E-14D;
-    public long getPrevious();
-    public long getFollowing();
+    public int getPrevious();
+    public int getFollowing();
     public double getCapacity();
     public double getFlow();
-    public long getOther(long junction);
-    double getResidualCapacity(long junction);
-    public void addResidualFlow(long junction, double delta);
+    public int getOther(int junction);
+    double getResidualCapacity(int junction);
+    public void addResidualFlow(int junction, double delta);
     public boolean epsilonCheck(double value);
 }
