@@ -16,7 +16,7 @@
  * 
  */
 
-package local.example.draft.or.algorithm.implement;
+package local.example.draft.or.algorithm.util.implement;
 
 import junit.framework.Assert;
 import org.junit.Before;
