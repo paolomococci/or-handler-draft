@@ -16,9 +16,9 @@
  * 
  */
 
-package local.example.draft.or.algorithm.implement;
+package local.example.draft.or.algorithm.util.implement;
 
-import local.example.draft.or.algorithm.FlowPipe;
+import local.example.draft.or.algorithm.util.FlowPipe;
 
 /**
  *
