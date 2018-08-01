@@ -16,7 +16,7 @@
  * 
  */
 
-package local.example.draft.or.algorithm;
+package local.example.draft.or.algorithm.util;
 
 /**
  *
